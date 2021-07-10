@@ -6,15 +6,15 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - mood-diary',
-    title: 'mood-diary',
+    titleTemplate: '%s - 오늘의 일기장',
+    title: 'Mood Diary',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ko'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: '오늘하루 어떠셨나요? 오늘의 기분을 기록하세요!' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -54,8 +54,14 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
+        light: {
+          primary: '#3f51b5',
+          secondary: '#b0bec5',
+          accent: '#8c9eff',
+          error: '#b71c1c',
+        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
