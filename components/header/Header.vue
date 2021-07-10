@@ -1,23 +1,18 @@
 <template>
-  <v-app-bar color="primary" dark dense app>
+  <v-app-bar id="header" color="primary" dense app>
     <v-container>
       <v-row>
         <v-app-bar-title>
-          <v-btn text class="logo" @click="console.log(123)">
-            <v-img
-              max-width="36"
-              max-height="36"
-              src="../../assets/logo.png"
-            ></v-img>
-            모닥불
+          <v-btn text color="info">
+            <Logo />
           </v-btn>
         </v-app-bar-title>
 
         <v-spacer></v-spacer>
 
-        <v-btn text @click="console.log(123)">
+        <v-btn text color="info">
           <v-icon>mdi-account</v-icon>
-          로그인
+          <span>로그인</span>
         </v-btn>
       </v-row>
     </v-container>
@@ -25,11 +20,14 @@
 </template>
 
 <script>
-export default {};
+import Logo from "./Logo.vue";
+
+export default {
+  components: {
+    Logo
+  }
+};
 </script>
 
 <style lang="scss">
-.logo {
-  width: 200px;
-}
 </style>

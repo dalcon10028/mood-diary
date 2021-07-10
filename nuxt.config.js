@@ -57,10 +57,14 @@ export default {
       dark: false,
       themes: {
         light: {
-          primary: '#3f51b5',
-          secondary: '#b0bec5',
-          accent: '#8c9eff',
-          error: '#b71c1c',
+            primary: '#EBC2AC',
+            secondary: '#FFFCFA',
+            accent: '#E6D4CA',
+            error: '#689997',
+            success: '#CAE6E4',
+
+            info: '#535353',
+            warning: '#FFC107',
         },
         dark: {
           primary: colors.blue.darken2,
