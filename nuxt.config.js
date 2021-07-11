@@ -14,10 +14,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '오늘하루 어떠셨나요? 오늘의 기분을 기록하세요!' },
+      { hid: 'description', name: 'description', content: '오늘 하루 어떠셨나요? 오늘의 기분을 기록하세요!' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
@@ -48,7 +49,10 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:8000',
+    proxy: true
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

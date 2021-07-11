@@ -3,14 +3,14 @@
     <v-container>
       <v-row>
         <v-app-bar-title>
-          <v-btn text color="info">
+          <v-btn text color="info" @click="$router.push('/')">
             <Logo />
           </v-btn>
         </v-app-bar-title>
 
         <v-spacer></v-spacer>
 
-        <v-btn text color="info">
+        <v-btn text color="info" @click="$router.push('/login')">
           <v-icon>mdi-account</v-icon>
           <span>로그인</span>
         </v-btn>
