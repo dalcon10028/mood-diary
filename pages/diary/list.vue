@@ -1,11 +1,11 @@
 <template>
   <section>
     <v-card
+      v-for="(card, idx) in cards"
+      :key="idx"
       class="mt-5"
       max-width="960"
       outlined
-      v-for="(card, idx) in cards"
-      :key="idx"
     >
       <v-card-text>
         <div class="ma-3 d-flex">
@@ -51,12 +51,9 @@ export default {
   async asyncData() {
     try {
       const { data } = await fetchAllDiaryList();
-      this.cards = data;
+      return { cards: data };
     } catch (error) {
-      throw new Error(error);
-    }
-    return {
-      cards: data
+      console.error(`일기 목록 출력 에러 ${error}`);
     }
   },
 
@@ -64,14 +61,9 @@ export default {
     return {
       seletedId: 1,
       dialog: false,
+      cards: []
     };
   },
-
-
-
-  // created() {
-  //   this.fetchAllDiaryList();
-  // },
 
   methods: {
     openDialog(idx) {
@@ -94,7 +86,7 @@ export default {
       const { data } = await deleteDiary(id);
       console.log(data);
       this.dialog = false;
-      this.fetchAllDiaryList();
+      fetchAllDiaryList();
     },
   },
 };
